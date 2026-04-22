@@ -94,4 +94,10 @@ class TestBooksCollector:
         assert len(favorites) == 1
         assert 'Дюна' in favorites
 
+    def test_add_new_book_add_same_book_twice_not_added(self):
+        collector = BooksCollector()
+        collector.add_new_book('Дюна')
+        collector.add_new_book('Дюна')
+        assert len(collector.get_books_genre()) == 1
+
    
